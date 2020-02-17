@@ -11,6 +11,8 @@
 <img src='https://github.com/huihuiman/Http-Web/blob/master/httpWeb%E5%9C%96%E7%89%87/http3.jpg'>
 
 <img src='https://github.com/huihuiman/Http-Web/blob/master/httpWeb%E5%9C%96%E7%89%87/http8.jpg'>
+<img src='https://github.com/huihuiman/Http-Web/blob/master/httpWeb%E5%9C%96%E7%89%87/http9.jpg'>
+
 
 
 各個指令終端相關顯示
