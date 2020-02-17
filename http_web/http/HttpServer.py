@@ -54,10 +54,10 @@ class HTTPServer(object):
         status,response_body = \
         self.send_request(env['METHOD'],env['PATH'])
 
-        #根據響應碼組織響應頭內容
+
         response_headlers = self.get_headlers(status)
 
-        #將結果組織為http response 發送給客戶端
+        #將結果http response 發送給客戶端
         response = response_headlers + response_body
         connfd.send(response.encode())
         connfd.close()
