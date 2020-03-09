@@ -8,7 +8,7 @@ from setting import *
 import time 
 
 class HTTPServer(object):
-    def __init__(self,addr = ('0.0.0.0',80)):
+    def __init__(self,addr = ('0.0.0.0',8000)):
         self.sockfd = socket()
         self.sockfd.setsockopt(SOL_SOCKET,SO_REUSEADDR,1) 
         self.addr = addr
