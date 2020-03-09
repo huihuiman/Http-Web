@@ -15,10 +15,8 @@ class Application(object):
     def start(self):
         self.sockfd.listen(5)
         while True:
-            connfd,addr = self.sockfd.accept()
-            #接收方法
-            method = connfd.recv(128).decode()
-            #接收内容
+            connfd,addr = self.sockfd.accept()         
+            method = connfd.recv(128).decode()           
             path = connfd.recv(128).decode()
             print(method,path)
             if method == 'GET':
