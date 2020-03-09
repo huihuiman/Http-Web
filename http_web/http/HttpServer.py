@@ -19,7 +19,7 @@ class HTTPServer(object):
         self.port = addr[1]
         self.sockfd.bind(addr)
 
-    #HTTP服務器啟動
+   
     def serve_forever(self):
         self.sockfd.listen(10)
         print("Listen the port %d..."%self.port)
@@ -32,13 +32,13 @@ class HTTPServer(object):
             handle_client.start()
 
     def handle_request(self,connfd):
-        #接收瀏覽器請求
+       
         request = connfd.recv(4096)
         request_lines = request.splitlines()
-        #獲取請求行
+       
         request_line = request_lines[0].decode()
 
-        #正則表達式提取請求方法與請求內容
+        
         pattern = r'(?P<METHOD>[A-Z]+)\s+(?P<PATH>/\S*)'
         try:
             env = re.match(pattern,request_line).groupdict()
@@ -50,24 +50,24 @@ class HTTPServer(object):
             connfd.send(response.encode())
             return
 
-        #將請求發給frame得到返回數據結果
+       
         status,response_body = \
         self.send_request(env['METHOD'],env['PATH'])
 
 
         response_headlers = self.get_headlers(status)
 
-        #將結果http response 發送給客戶端
+        
         response = response_headlers + response_body
         connfd.send(response.encode())
         connfd.close()
 
-    #和frame 交互並發送 request獲取response
+   
     def send_request(self,method,path):
         s = socket()
         s.connect(frame_addr)
 
-        #向webframe發送method 和 path
+       
         s.send(method.encode())
         time.sleep(0.1)
         s.send(path.encode())
